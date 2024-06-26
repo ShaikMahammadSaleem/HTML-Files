@@ -1,0 +1,100 @@
+
+<html>
+    <head>
+        <title>Form Table Ecommerce</title>
+    </head>
+    <body>
+        <th>Form Table Ecommerce</th>
+<form>
+    <table border="">
+      <tr>
+        <td>Product Information</td>
+        <td><table>
+          <tr>
+            <td>Product Name:</td>
+            <td><input type="text" name="product_name" value="Product Name" /></td>
+          </tr>
+          <tr>
+            <td>Product Description:</td>
+            <td><textarea name="product_description"></textarea></td>
+          </tr>
+          <tr>
+            <td>Product Price:</td>
+            <td><input type="number" name="product_price" value="10.99" /></td>
+          </tr>
+          <tr>
+            <td>Product Quantity:</td>
+            <td><input type="number" name="quantity" value="1" /></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td>Shipping Information</td>
+        <td><table>
+          <tr>
+            <td>Shipping Address:</td>
+            <td><input type="text" name="shipping_address" /></td>
+          </tr>
+          <tr>
+            <td>Shipping Method:</td>
+            <td><select name="shipping_method">
+              <option value="standard">Standard</option>
+              <option value="expedited">Expedited</option>
+              <option value="express">Express</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td>Shipping Cost:</td>
+            <td><input type="number" name="shipping_cost" value="5.99" /></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td>Payment Information</td>
+        <td><table>
+          <tr>
+            <td>Payment Method:</td>
+            <td><select name="payment_method">
+              <option value="credit_card">Credit Card</option>
+              <option value="paypal">PayPal</option>
+              <option value="bank_transfer">Bank Transfer</option>
+            </select></td>
+          </tr>
+          <tr v-if="payment_method === 'credit_card'">
+            <td>Credit Card Number:</td>
+            <td><input type="text" name="credit_card_number" value="" /></td>
+          </tr>
+          <tr v-if="payment_method === 'paypal'">
+            <td>PayPal Account:</td>
+            <td><input type="text" name="paypal_account" value="" /></td>
+          </tr>
+          <!-- ... -->
+        </table></td>
+      </tr>
+  
+      <!-- Order Details and Additional Options -->
+      <!-- ... -->
+  
+      <!-- Submit Order Button -->
+      <input type="submit" value="Submit Order" />
+    </table>
+<!--   
+     JavaScript code to handle form submission and validate input fields -->
+    <!-- <script>
+  
+      // Validate input fields here
+      function validateForm() {
+        // ...
+      }
+  
+      // Handle form submission
+      document.getElementById('submit_order').addEventListener('click', function() {
+        validateForm();
+        // Submit form data to server-side API
+        // ...
+      });
+    </script> -->
+   
+  </form>
+</body>
+  </html>

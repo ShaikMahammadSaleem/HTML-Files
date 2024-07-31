@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the web page using Float properties</title>
+    <style>
+     .float-left{
+        float: left;
+        width: 50%;
+        background-color: aliceblue;
+     }
+     .float-right{
+        float: right;
+        width: 50%;
+        background-color:green;
+     }
+     .clearfix::after{
+        contain: "";
+        clear: both;
+        display: table;
+     }
+    </style>
+</head>
+<body>
+    <div class="clearfix">
+        <div class="Float-left">This is the left floated box.</div>
+        <div class="Float-right">This is the Right floated box.</div>
+    </div>
+</body>
+</html>

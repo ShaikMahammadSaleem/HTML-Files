@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Magnification</title>
+    <style>
+        .image-container {
+            position: relative;
+            width: 300px;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+<body>
+    <h2>Hover over the image to magnify it</h2>
+    <div class="image-container">
+        <img src="c:\Users\DELL\Pictures\Saved Pictures\9d9153db-6625-439a-86ee-457d4a8d0303.jpg" alt="Example Image">
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Calculator</title>
+    <script>
+        // Function to calculate salary after deductions
+        function calculateSalary() {
+            const fixedSalary = 25000;  // Fixed salary of 25k
+            let deductions = document.getElementById("deductions").value;  // Get the input value for deductions
+            let finalSalary = fixedSalary - deductions;  // Calculate final salary after deductions
+
+            // Display the final salary
+            document.getElementById("result").innerHTML = "The final salary after deductions is: $" + finalSalary;
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Salary Calculator</h1>
+
+    <!-- Input field for deductions -->
+    <label for="deductions">Enter deductions: </label>
+    <input type="number" id="deductions" placeholder="Enter deductions amount">
+
+    <!-- Button to calculate salary -->
+    <button onclick="calculateSalary()">Calculate Salary</button>
+
+    <!-- Display the result here -->
+    <p id="result"></p>
+
+</body>
+</html>
+
+
+
+
+
+
+// // Function to calculate the salary after deductions
+// function calculateSalary(monthlyPayScale, deductions) {
+//     const fixedSalary = 25000;  // Fixed salary of 25k
+//     let finalSalary = fixedSalary - deductions; // Deduct the deductions from the fixed salary
+//     console.log("The final salary after deductions is: $" + finalSalary);
+// }
+
+// // Example usage:
+// calculateSalary(25000, 2000);  // Assuming $2000 in deductions

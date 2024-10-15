@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+    <script>
+        function restrictActions(event) {
+            event.preventDefault();
+            document.getElementById('message').innerText = event.type === 'copy' ? 'Copy is restricted' : 'Paste is restricted';
+        }
+
+        function disableRightClick(event) {
+            event.preventDefault();
+            document.getElementById('message').innerText = 'Right click is disabled';
+        }
+    </script>
+</head>
+<body>
+    <h2>Reset Password</h2>
+    <form>
+        <label for="newPassword">New Password: </label>
+        <input type="password" id="newPassword" name="newPassword" oncopy="restrictActions(event)" onpaste="restrictActions(event)"><br>
+
+        <label for="confirmPassword">Confirm Password: </label>
+        <input type="password" id="confirmPassword" name="confirmPassword" oncopy="restrictActions(event)" onpaste="restrictActions(event)"><br>
+
+        <span id="message" class="error"></span><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.addEventListener('contextmenu', disableRightClick);
+    </script>
+</body>
+</html>

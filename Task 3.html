@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selling Price Calculator</title>
+    <script>
+        // Function to calculate the selling price after a 20% discount
+        function actualPrice() {
+            let costPrice = document.getElementById("costPrice").value;  // Get the input value for cost price
+            let discount = costPrice * 0.20;  // Calculate 20% discount
+            let sellingPrice = costPrice - discount;  // Calculate the final selling price after discount
+
+            // Display the selling price
+            document.getElementById("result").innerHTML = "The selling price after a 20% discount is: $" + sellingPrice;
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Selling Price Calculator</h1>
+
+    <!-- Input field for cost price -->
+    <label for="costPrice">Enter Cost Price: </label>
+    <input type="number" id="costPrice" placeholder="Enter the cost price">
+
+    <!-- Button to calculate selling price -->
+    <button onclick="actualPrice()">Calculate Selling Price</button>
+
+    <!-- Display the result here -->
+    <p id="result"></p>
+
+</body>
+</html>
+
+
+
+
+
+
+
+// // Function to calculate the selling price after applying a 20% discount
+// function actualPrice(costPrice) {
+//     let discount = costPrice * 0.20;     // Calculate 20% discount
+//     let sellingPrice = costPrice - discount; // Calculate selling price after discount
+//     console.log("The selling price after a 20% discount is: $" + sellingPrice);
+// }
+
+// // Example usage:
+// actualPrice(200);  // Assuming the cost price is $200

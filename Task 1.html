@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Example in Given Task</title>
+
+    <script>
+        function login() {
+            const correctUsername = "Admin";     // Defined the correct username and password
+            const correctPassword = "Admin@123";
+            
+            
+            const username = prompt("Enter username:");     // Prompt the user for username and password
+
+            
+        
+            if (username === correctUsername) {           // Check if the username matches
+                
+                const password = prompt("Enter password:");         // If username is correct, prompt for password
+                
+    
+                if (password === correctPassword) {                   // Check if the password matches
+                    alert("Login success");
+                } else {
+                    alert("Incorrect password");
+                }
+            } else {
+                alert("Incorrect username");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="login()">Login</button>
+</body>
+</html>

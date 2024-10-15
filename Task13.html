@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+    <script>
+        function validateLoginForm() {
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const mobile = document.getElementById('mobile').value;
+            const password = document.getElementById('password').value;
+            let isValid = true;
+
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            const usernameRegex = /^[a-zA-Z]+$/;
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+            const mobileRegex = /^\d{10}$/;
+
+            document.getElementById('usernameError').innerText = '';
+            document.getElementById('emailError').innerText = '';
+            document.getElementById('mobileError').innerText = '';
+            document.getElementById('passwordError').innerText = '';
+
+            if (!usernameRegex.test(username)) {
+                document.getElementById('usernameError').innerText = 'Username should contain only letters without spaces.';
+                isValid = false;
+            }
+
+            if (!emailRegex.test(email)) {
+                document.getElementById('emailError').innerText = 'Email should end with @gmail.com';
+                isValid = false;
+            }
+
+            if (!mobileRegex.test(mobile)) {
+                document.getElementById('mobileError').innerText = 'Mobile number should be 10 digits.';
+                isValid = false;
+            }
+
+            if (!passwordRegex.test(password)) {
+                document.getElementById('passwordError').innerText = 'Password must contain 8 chars with at least 1 uppercase, lowercase, digit, and special symbol.';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+</head>
+<body>
+    <h2>Instagram Login</h2>
+    <form onsubmit="return validateLoginForm()">
+        <label for="username">Username: </label>
+        <input type="text" id="username" name="username"><br>
+        <span id="usernameError" class="error"></span><br>
+
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email"><br>
+        <span id="emailError" class="error"></span><br>
+
+        <label for="mobile">Mobile: </label>
+        <input type="text" id="mobile" name="mobile"><br>
+        <span id="mobileError" class="error"></span><br>
+
+        <label for="password">Password: </label>
+        <input type="password" id="password" name="password"><br>
+        <span id="passwordError" class="error"></span><br>
+
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
